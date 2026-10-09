@@ -138,7 +138,7 @@ More keys spread the load and make 429 rate limits less likely. Groq requests cu
 | 2 | Title matches the **senior regex** `senior|sr|staff|principal|lead|architect|advisor|manager|director|head|vp|distinguished` | `PASS`, fit 0, *"Senior-level title — auto-passed"* |
 | 3 | LLM call: random key from `API_POOL`, `temperature: 0`, `max_tokens: 1200` | see below |
 | 3a | LLM says clearance `required` **and** the JD text really matches a clearance regex | `PASS`: *"Citizenship/clearance restriction stated"* |
-| 3b | LLM `yearsRequired > 6` **and** the JD contains an "N years" pattern | `PASS`: *"Requires N+ yrs (limit 6)"* |
+| 3b | LLM `yearsRequired > 2` **and** the JD contains an "N years" pattern | `PASS`: *"Requires N+ yrs (limit 2)"* |
 | 3c | `fit <= 80` | `PASS`: *"Fit N% below cutoff"* |
 | 3d | otherwise | `APPLY` |
 | — | HTTP 429 | waits 10 s and retries, up to 3 times |

@@ -344,7 +344,7 @@ function payload(t,sys,usr){
 
               var decision,reason;
               if(isClear){decision="PASS";reason="Citizenship/clearance restriction stated"+(lr?" — "+lr:"");}
-              else if(!isNaN(py)&&py>6&&jdYears){decision="PASS";reason="Requires "+py+"+ yrs (limit 6)"+(lr?" — "+lr:"");}
+              else if(!isNaN(py)&&py>2&&jdYears){decision="PASS";reason="Requires "+py+"+ yrs (limit 2)"+(lr?" — "+lr:"");}
               else if(fit<=80){decision="PASS";reason="Fit "+fit+"% below cutoff"+(lr?" — "+lr:"");}
               else {decision="APPLY";reason=lr||("Strong fit: "+fit+"%");}
 
