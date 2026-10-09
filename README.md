@@ -33,7 +33,7 @@ Current version: `6.9-tier2lowfit`
 - **Hard filters that run before the LLM**, with no API call:
   - Security clearance, TS/SCI, ITAR/EAR, export control, "US persons" or "US citizens only" postings → PASS
   - Senior-level titles (Senior, Sr, Staff, Principal, Lead, Architect, Manager, Director, Head, VP…) → PASS
-- **Post-LLM checks**: clearance claims are only accepted if the JD text really mentions them, years over 6 → PASS, fit ≤ 80 → PASS.
+- **Post-LLM checks**: clearance claims are only accepted if the JD text really mentions them, years over 2 → PASS, fit ≤ 80 → PASS.
 - **Structured output**: gpt-oss models use a strict JSON schema, other models use JSON mode. A forgiving `extractJSON` parser handles code fences, smart quotes and trailing commas.
 - **Persistent dedup across reloads** with `GM_setValue`, a 7-day TTL and a 3000-entry cap. The store is shared with a companion CSV-export script.
 - **Human-like pacing**: smooth scroll before clicks, jittered sleeps, random 10–15 s gaps between jobs, and a longer break every 4–6 jobs.
